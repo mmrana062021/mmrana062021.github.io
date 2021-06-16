@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>SMEEL</title>
+  <link rel="icon" href="favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #000000;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #00284d;
+    color: #fff;
+    padding: 75px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #ecf2f9;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #003566;
+    z-index: 9999;
+    border: 0.5;
+    font-size: 13px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 1px;
+    border-radius: 0;
+    font-family: Cursive;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #121111 !important;
+    background-color: #b3ccff  !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #5E6566;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  
+  .center{
+    text-align: center;
+        }
+  .right{
+    text-align: right;
+    
+    }  
+  .left{
+    text-align: left;
+        }
+		
+  table, th, td {
+  border: 0px solid black;
+  border-collapse: collapse;
+   }
+    th, td {
+   padding: 5px;
+  }	
+  
+   th1 {
+   padding: 5px;
+  text-align: right;
+  }	
+  
+  
+ 
+  
+  pre { 
+                
+                background-color: #5E6566;
+				color: #FFFF; 
+                margin: 0px; 
+				 border: 0px;
+				   font-size: 18px;
+
+            }  
+
+
+  .small {
+  line-height: 1.1;
+}
+		
+</style>
+  
+  
+  
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="">SMEEL</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">Assessment Services</a></li>
+        <li><a href="#recent">Product Design and R&D Services</a></li>
+        <li><a href="#publications">PLC Training Course</a></li>
+        <li><a href="#teaching">Instrumentation and Process Control Course</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <div class="row">
+    <div class="col-sm-3" style="background-color:#00284d;">
+	
+	<p class="text-right">
+	
+	<br>
+	<br>
+      <img src="photo.jpg" class="img-circle" alt="Bird" width="150" height="150">    
+	  </p>
+    </div>
+  
+    <div class="col-sm-6" style="background-color: #00284d;">
+  
+<div class="small">
+<p class="text-middle">
+<br>
+<br>
+<big>SM Electrical & Electronics Engineering Ltd</big><br>
+<small>
+<br>
+
+
+Director: <big>Syeda S Rahman</big> <br><br>
+
+Registered Office Address: Aylesbury, UK<br>
+Email Address: <a href="mailto:ssr-smeel@gmail.com">ssr-smeel@gmail.com</a> <br>
+<a href="mailto:engiesmeel2016@gmail.com">engiesmeel2016@gmail.com</a>  <br> <a href="mailto:engiesmeel2020@yahoo.com">engiesmeel2020@yahoo.com</a>         <br>
+Web: <a href="http://www.syeda-s-rahman-smeel.com/">http://www.syeda-s-rahman-smeel.com/</a><br>
+
+</small>
+</p>
+
+
+
+</div>
+
+   </div>
+  
+  </div>
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+  <div class="col-sm-3">
+    
+    </div>
+    <div class="col-sm-6">
+          <h3>Assessment/Coursework/Exam paper with marking schemes development services [Level 3 to 5]</h3>
+		  
+		   <h3>Specialists Modules:</h3>
+      	
+	  <ul>
+  <li>Programmable logic controllers </li>
+  <li>Automation and robotics </li>
+  <li>Mechatronics </li>
+  <li>Instrumentation and control </li>
+  <li>Further control systems </li>
+  <li>Control system engineering [up to level 7] </li>
+  <li>Industrial systems</li>
+  <li>Power electronics </li>
+  <li>Power system engineering  </li>
+  <li>Electrical power </li>
+  <li>Engineering design, Maths, Further Maths, Science and ECAD </li>
+   
+  
+</ul> 
+	  
+	  	  
+	  
+    	</div>
+  </div>
+</div>
+
+<div id="recent" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-3">
+  
+    </div>
+    <div class="col-sm-6">
+      <h3>
+Product design, research and development services</h3><br>
+	  
+	  <ul>
+	  <li>Switch mode power supply </li>
+  <li>PLC trainer kit  </li>
+  <li>Mechatronic kit </li>
+  <li>Customised electronic kit [subject to contract]  </li>
+	  
+</ul>  
+
+	  
+      
+      
+	
+
+	</div>
+	
+	
+  </div>
+</div>
+
+
+<!-- Container (About Section) -->
+<div id="publications" class="container-fluid">
+  <div class="row">
+  <div class="col-sm-3">
+    
+    </div>
+  
+  <div class="col-sm-6">
+          <h3>Programmable Logic Controller training course [Runs on Friday/Saturday, 4 weeks, 10 hours] Total costs: £500</h3><br>
+		 
+		 <p>The candidates required no prior knowledge and experience as we start from scratch. The PLC training course aims to enable keen engineering apprentices, electricians and young engineers to familiarise with basic operations of PLC in industry and their basic troubleshooting.
+		 </p>
+		 
+	<p><h3>Course Contents:</h3>
+	
+	<ul>
+  <li>Siemens step S7-1200/1500 programming</li>
+  <li>Basics of PLC</li>
+  <li>Inputs/outputs interfacing of PLCs </li>
+  <li>Standards and communication protocols for PLCs </li>
+  <li>Timer and counter programming for PLCs </li>
+  <li>Basic fault finding and troubleshooting of PLCs </li>
+  <li>Automation, RTU and SCADA basics with PLCs </li>
+  </ul>
+		 </p>
+		
+		 
+    	</div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Container (teaching Section) <div class="lead" style="margin: 0px 0px 10px 0px;">Courses Taught</div>-->
+
+
+
+<div id="teaching" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-3">
+  
+    </div>
+    <div class="col-sm-6">
+	 <h3>Instrumentation and process control course [Runs on Friday/Saturday, 6 weeks, 15 hours] Total costs: £625</h3><br>
+		 
+		 <p>The aim of this course is to enable electrician, apprentices, electrical, maintenance and electronic engineer to carry out daily activities and scheduled maintenance on sensors, transducers, actuators and process control devices used in industrial systems. Both online and in-person deliveries are available.  
+		 </p>
+		 
+	<p><h3>Course Contents:</h3>
+	
+	<ul>
+  <li>Introduction to transducer, sensors and actuators.</li>
+  <li>Measurement and testing of inductive/capacitive proximity switches, temperature, pressure, position and level detector sensors. </li>
+  <li>Introduction to block diagram of industrial systems.</li>
+  <li>Introduction to PID control techniques for an industrial system. </li>
+  <li>Designing and testing of an instrumentation amplifier for industrial systems on printed circuit board</li>
+  <li>Basic soldering skills </li>
+  <li>Modelling instruments for industrial systems (participants will work on 3 industrial systems) </li>
+   <li>Basic MATLAB and LTSpice circuits/systems to demonstrate course contents </li>
+  </ul>
+		 </p>
+	
+   
+</div>
+  
+  
+  
+</div>
+
+
+	  
+      
+      
+	
+
+	</div>
+  
+  
+
+ 
+	
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+<!-- Image of location/map -->
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>@SMEEL</p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
